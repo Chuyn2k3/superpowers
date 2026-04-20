@@ -112,3 +112,44 @@ bash install.sh   # macOS/Linux
 ## License
 
 MIT License - see LICENSE file for details.
+
+Dựa trên triết lý của hệ thống Superpowers mà bạn vừa xem qua, quy trình làm việc (workflow) chuẩn của một "Dev" thực thụ không chỉ là gõ code ngay lập tức. Để tối ưu hiệu suất và giảm thiểu lỗi, bạn nên áp dụng các lệnh/kỹ năng theo thứ tự sau:
+
+1. Giai đoạn Lập kế hoạch (Planning)
+Đừng bắt tay vào code ngay khi vừa nhận yêu cầu. Hãy dùng các kỹ năng lập kế hoạch trước.
+
+writing-plans: Viết ra một kế hoạch triển khai chi tiết. Bạn cần xác định mình sẽ sửa file nào, logic thay đổi ra sao.
+
+brainstorming: Nếu yêu cầu khó hoặc mơ hồ, hãy dùng kỹ năng này để phản biện và làm rõ các góc khuất của thiết kế trước khi thực hiện.
+
+2. Giai đoạn Triển khai (TDD & Execution)
+Đây là lúc áp dụng tư duy "Kiểm thử trước, Code sau".
+
+test-driven-development (TDD):
+
+Red: Viết một bản kiểm thử (test) cho tính năng mới (lúc này test sẽ báo lỗi vì chưa có code).
+
+Green: Viết mã nguồn vừa đủ để test đó vượt qua.
+
+Refactor: Tối ưu hóa lại mã nguồn cho sạch đẹp nhưng vẫn đảm bảo test vượt qua.
+
+executing-plans: Thực hiện kế hoạch đã lập ở bước 1 theo từng lô (batch) nhỏ. Sau mỗi lô, hãy dừng lại kiểm tra (checkpoint) để đảm bảo không đi chệch hướng.
+
+3. Giai đoạn Kiểm tra & Gỡ lỗi (Verification & Debugging)
+Nếu trong quá trình code mà phát sinh lỗi ngoài dự kiến:
+
+systematic-debugging: Đừng đoán mò. Hãy dùng quy trình 4 bước để tìm nguyên nhân gốc rễ (root cause).
+
+verification-before-completion: Khi bạn nghĩ mình đã sửa xong lỗi, hãy dùng kỹ năng này để xác minh lại một lần nữa bằng các kịch bản kiểm thử thực tế. Đừng vội tin vào cảm giác của mình.
+
+4. Giai đoạn Hoàn tất & Review (Finishing)
+Trước khi đẩy code (commit/push) lên hệ thống:
+
+requesting-code-review: Tự kiểm tra lại danh sách (checklist) trước khi nhờ người khác review. Điều này giúp bạn chuyên nghiệp hơn và giảm bớt các lỗi ngớ ngẩn.
+
+finishing-a-development-branch: Đưa ra quyết định cuối cùng về việc gộp nhánh (merge) hoặc tạo Pull Request (PR) để đưa code vào nhánh chính.
+
+Tóm tắt thứ tự ưu tiên:
+Plan (Kế hoạch) ➔ Test (Kiểm thử) ➔ Code (Triển khai) ➔ Verify (Xác minh)
+
+Cách tiếp cận này giúp bạn tránh được tình trạng "Code xong rồi mới thấy sai kiến trúc" hoặc "Sửa được lỗi này thì lại đẻ ra lỗi kia".
