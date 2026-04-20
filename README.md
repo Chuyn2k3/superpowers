@@ -17,7 +17,7 @@ Because the skills are natively supported by the Antigravity skill architecture 
 
 > 📖 **Full guide:** [docs/INSTALL.md](docs/INSTALL.md)
 
-No cloning required. Run a **single command** on your terminal — works for both first install and future updates.
+No cloning required! You only need to run a **single command** to install the project. You can run the **exact same command** again anytime to update your local skills if this GitHub repository releases an update.
 
 ### 🪟 Windows — PowerShell
 
