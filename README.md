@@ -13,13 +13,13 @@ These skills guide Antigravity through methodical practices like:
 
 Because the skills are natively supported by the Antigravity skill architecture (`~/.gemini/antigravity/skills`), they trigger automatically. You don't need to do anything special. Your Antigravity AI just has Superpowers.
 
-## Installation
+## Installation & Update
 
-No cloning required. Run a single command on your terminal and you're done. ✨
+> 📖 **Full guide:** [docs/INSTALL.md](docs/INSTALL.md)
 
-### 🪟 Windows — PowerShell (One-Liner)
+No cloning required. Run a **single command** on your terminal — works for both first install and future updates.
 
-Open **PowerShell** and run:
+### 🪟 Windows — PowerShell
 
 ```powershell
 irm https://raw.githubusercontent.com/Chuyn2k3/superpowers/main/install.ps1 | iex
@@ -31,36 +31,47 @@ irm https://raw.githubusercontent.com/Chuyn2k3/superpowers/main/install.ps1 | ie
 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
 
-### 🍎 macOS / Linux — Bash (One-Liner)
-
-Open your **Terminal** and run:
+### 🍎 macOS / Linux — Bash
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Chuyn2k3/superpowers/main/install.sh | bash
 ```
 
-Both commands will automatically download the latest skills and install them to the correct location. No manual cloning needed.
+### 🔄 Updating to the Latest Version
+
+**Same command, same terminal.** The installer automatically detects whether this is a fresh install or an update:
+
+| State | What happens |
+|-------|-------------|
+| First time | `🚀 Installing...` — copies all skills |
+| Already installed | `🔄 Updating...` — shows previous version, replaces with latest |
+
+No extra flags, no extra steps. Just run the same command whenever you want to pull the latest changes.
 
 ---
 
-### 📦 Manual Install (after cloning)
+### 📦 Manual Install/Update (after cloning)
 
-If you prefer to clone first:
+If you prefer to keep a local clone:
 
 ```bash
-# Clone the repo
 git clone https://github.com/Chuyn2k3/superpowers.git
 cd superpowers
 
-# Windows
-.\install.ps1
+.\install.ps1     # Windows
+bash install.sh   # macOS/Linux
+```
 
-# macOS / Linux
-bash install.sh
+To update when the repo changes:
+
+```bash
+cd superpowers
+git pull
+.\install.ps1     # Windows
+bash install.sh   # macOS/Linux
 ```
 
 > [!NOTE]
-> **Copy vs Symlink:**
 > The installer uses **Copy** (not Symlink) for maximum compatibility. Windows blocks non-admin users from creating symlinks. Your Antigravity agent keeps working even if you delete the downloaded folder.
 
 ---
