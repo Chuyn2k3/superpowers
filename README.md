@@ -15,24 +15,53 @@ Because the skills are natively supported by the Antigravity skill architecture 
 
 ## Installation
 
-Installing Antigravity Superpowers is incredibly simple. You do not need to configure anything manually. Just use one of the supplied installation scripts below depending on your operating system.
+No cloning required. Run a single command on your terminal and you're done. ✨
 
-### Option 1: Windows (PowerShell or Batch)
+### 🪟 Windows — PowerShell (One-Liner)
 
-Double click the **`install.bat`** file, or right-click **`install.ps1`** and select "Run with PowerShell". 
-The script will automatically allocate and copy the skills to `%USERPROFILE%\.gemini\antigravity\skills`.
+Open **PowerShell** and run:
 
-### Option 2: MacOS / Linux
-
-Open your Terminal, navigate to the project directory, and run the shell script:
-```bash
-sh install.sh
+```powershell
+irm https://raw.githubusercontent.com/Chuyn2k3/superpowers/main/install.ps1 | iex
 ```
-This automatically allocates and copies the skills to `~/.gemini/antigravity/skills`.
+
+> [!TIP]
+> If you get an execution policy error, run this first:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+### 🍎 macOS / Linux — Bash (One-Liner)
+
+Open your **Terminal** and run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Chuyn2k3/superpowers/main/install.sh | bash
+```
+
+Both commands will automatically download the latest skills and install them to the correct location. No manual cloning needed.
+
+---
+
+### 📦 Manual Install (after cloning)
+
+If you prefer to clone first:
+
+```bash
+# Clone the repo
+git clone https://github.com/Chuyn2k3/superpowers.git
+cd superpowers
+
+# Windows
+.\install.ps1
+
+# macOS / Linux
+bash install.sh
+```
 
 > [!NOTE]
-> **Difference between Copy vs Symlink:**
-> These installation scripts use **Copy** by default instead of **Symlink**. This ensures maximum compatibility (Windows natively blocks local users from creating Symlinks) and guarantees your Antigravity agent will not lose access to the files if you move or delete this downloaded folder.
+> **Copy vs Symlink:**
+> The installer uses **Copy** (not Symlink) for maximum compatibility. Windows blocks non-admin users from creating symlinks. Your Antigravity agent keeps working even if you delete the downloaded folder.
 
 ---
 
