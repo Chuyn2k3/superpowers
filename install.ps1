@@ -82,8 +82,13 @@ if ($IsRemoteRun) {
 
     if ($UseGit) {
         Write-Step "Cloning with git (depth=1)..."
-        $cloneOut = git clone --depth 1 $REPO_URL $TempDir 2>&1
-        if ($LASTEXITCODE -ne 0) {
+        $oldErrPref = $ErrorActionPreference
+        $ErrorActionPreference = "SilentlyContinue"
+        $cloneOut = git clone -q --depth 1 $REPO_URL $TempDir 2>&1
+        $errCode = $LASTEXITCODE
+        $ErrorActionPreference = $oldErrPref
+        
+        if ($errCode -ne 0) {
             Write-Info "git clone failed, falling back to ZIP..."
             $UseGit = $false
         } else {
